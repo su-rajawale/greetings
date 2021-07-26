@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hi !!!</title>
+    <style>
+        
+        *,*::before,*::after {
+            box-sizing: border-box;
+            --slider-height: calc(var(--btn-height)/2);
+            --btn-height: 18rem;
+            --btn-width: 24rem;
+            --btn-bg: #fff;
+        }
+
+        body {
+            position: fixed;
+            top: 0; bottom: 0;
+            left: 0; right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        p {
+            padding: 0;
+            margin: 0;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .container {
+            z-index: 100;
+            cursor: pointer;
+            border: 1px solid black;
+        }
+
+        .container:hover .btn::before { animation: before 2s ease-in-out 1 normal forwards; }
+        .container:hover .btn::after { animation: after 2s ease-in-out 1 normal forwards; }
+
+        .btn {
+            height: var(--btn-height);
+            width: var(--btn-width);
+            position: relative;
+            z-index: -1;
+            background-image: url('nature.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: var(--slider-height); left: 0;
+            bottom: 0; right: 0;
+            background-color: var(--btn-bg);
+            z-index: 0;
+        }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            bottom: var(--slider-height); right: 0;
+            background-color: var(--btn-bg);
+            z-index: 1;
+        }
+
+        
+
+        @keyframes before {
+            from {
+            
+            top:var(--slider-height); left: 0;
+            bottom: 0; right: 0;
+                }
+
+            to {
+            top:var(--slider-height); left: var(--btn-width);
+            bottom: 0; right: 0;
+            }
+        }
+
+        @keyframes after {
+            from {
+            
+            top: 0; left: 0;
+            bottom:var(--slider-height); right: 0;
+                }
+
+            to {
+            top: 0; left: 0;
+            bottom:var(--slider-height); right: var(--btn-width);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn">
+            <p> Hi !!! </p>
+        </div>
+    </div>
+</body>
+</html>
