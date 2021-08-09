@@ -36,6 +36,9 @@
             z-index: 100;
             cursor: pointer;
             border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .container:hover .btn::before { animation: before 2s ease-in-out 1 normal forwards; }
@@ -104,7 +107,7 @@
 </head>
 <body>
     <div class="container">
-        Hover on the square !
+        <div class=""> Hover on the square !</div>
         <div class="btn">
             <p> Hi !!! </p>
         </div>
